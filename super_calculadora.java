@@ -21,7 +21,7 @@ import java.util.logging.Logger;
  */
 public class super_calculadora {
     
-     public static final Integer EOF = -1;
+     public static final Integer EOF = -1;          
 
     
     public static void main(String[] args){
@@ -32,14 +32,14 @@ public class super_calculadora {
     lista_doble inicio = new lista_doble();
     lista_doble inicio2 = new lista_doble();
     lista_doble inicio3 = new lista_doble();
-    lista_doble inicio4 = new lista_doble();
+    lista_doble inicio4 = new lista_doble();            
     lista_doble inicio5 = new lista_doble();
     lista listita = new lista();
     
     
     int fila_grande;
     
-    System.out.println("Introduzca la dirección del archivo");
+    System.out.println("Introduzca la dirección del archivo");          //SE INTRODUCE LA DIRECCIÓN DEL ARCHIVO
     direccion = leer.nextLine();
     
     
@@ -50,12 +50,12 @@ public class super_calculadora {
         int ascii = 0;
         int numero = 0;
         
-        while((ascii = reader.read()) != EOF){            
+        while((ascii = reader.read()) != EOF){                      //SE LEE LO QUE HAY EN EL DOCUMENTO Y SE INTRODUCE EN UNA LISTA
             if(ascii == '\n') {
                 inicio = listita.insertar_nodo(ascii);
                 continue;
             }
-            numero = Character.getNumericValue(ascii);
+            numero = Character.getNumericValue(ascii);              //PASAMOS LOS CARACTERES DE ASCII A ENTERO
             inicio = listita.insertar_nodo(numero);
         }
         
@@ -67,7 +67,7 @@ public class super_calculadora {
             Logger.getLogger(lista.class.getName()).log(Level.SEVERE, null, ex);
         }
        
-    inicio2 = listita.separar(inicio);
+    inicio2 = listita.separar(inicio);                          //SE SEPARA LA LISTA EN LOS DOS, LA LISTA 1  Y 2
     inicio = listita.separar2(inicio);
 
     
@@ -80,7 +80,7 @@ public class super_calculadora {
         System.out.print("2");
     } else System.out.println("Las listas son iguales");
     
-    switch(fila_grande){
+    switch(fila_grande){                                //CON ESTOS SWITCH SE HACEN LAS OPERACIONES, DEPENDIENDO DEL TAMAÑO DE LAS LISTAS
         case 1:
             inicio3 = listita.suma(inicio, inicio2);
             inicio3=listita.invertir(inicio3);
